@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 dbConnect
   .sync()
+  // .drop()
   .then(() => {
     start(PORT);
   })

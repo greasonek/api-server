@@ -4,7 +4,7 @@
 // const { dbConnect } = require('./index.model');
 
 const Dogs = (dbConnect, DataTypes) => {
-  return dbConnect.define('Dogs', {
+  return dbConnect.define('dogs', {
     dogName: {
       type: DataTypes.STRING,
       allowNull: false
@@ -16,6 +16,9 @@ const Dogs = (dbConnect, DataTypes) => {
     dogMood: {
       type: DataTypes.STRING
     },
+    humanId: {
+      type: DataTypes.INTEGER
+    }
   });
 };
 

@@ -15,7 +15,7 @@ router.delete('/human/:id',deleteHuman);
 
 // ROUTE HANDLERS
 async function getHuman(req,res) {
-  let allHumans = await humanModelCollection.get(null, {include:{model:dogModelCollection}});
+  let allHumans = await humanModelCollection.get(null, {include:{model:dogModelCollection.model}});
   res.status(200).json(allHumans);
 }
 
@@ -24,8 +24,8 @@ async function getOneHuman(req, res) {
   let oneHuman = await humanModelCollection.get(id, {
     include: { model: dogModelCollection.model },
   });
-  const dogs = await oneHuman.getDogs();
-  console.log(dogs);
+  // const dogs = await oneHuman.getDogs();
+  // console.log(dogs);
   res.status(200).json(oneHuman);
 }
 

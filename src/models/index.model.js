@@ -13,12 +13,19 @@ let sequelize = new Sequelize(POSTGRES_URI);
 
 // CALL MODEL FUNCTIONS
 const humanModel = human(sequelize, DataTypes);
+
 const dogModel = dogs(sequelize, DataTypes);
   
 //make associations
-humanModel.hasOne(dogModel);
-
-dogModel.belongsTo(humanModel);
+humanModel.hasOne(dogModel, {
+  foreignKey: 'humanId',
+  sourcekey: 'id'
+});
+  
+dogModel.belongsTo(humanModel, {
+  foreignKey: 'humanId',
+  targetKey: 'id'
+});
 
 // create a new COLLECTION class for each model
 const humanModelCollection = new Collection(humanModel);

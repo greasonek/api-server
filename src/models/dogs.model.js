@@ -14,7 +14,8 @@ const Dogs = (dbConnect, DataTypes) => {
       allowNull: false
     },
     dogMood: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING 
+      //maybe put allowNull: true?
     },
     humanId: {
       type: DataTypes.INTEGER

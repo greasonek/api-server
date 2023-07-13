@@ -5,6 +5,7 @@ const { Cats } = require('../models/index.model.js');
 
 const router = express.Router();
 
+//assigning router actions by function names
 router.get('/cats', getCats);
 router.get('/cats/:id', getCat);
 router.post('/cats', createCat);
@@ -33,7 +34,7 @@ async function updateCat(req, res) {
   const udpatedCatObj = req.body;
   let fetchedCat = await Cats.findOne({where: { id: id } });
   let updatedCat = await fetchedCat.update(udpatedCatObj);
-  res.status(200).json(updatedCat);
+  res.status(200).json(updatedCat); //maybe use 204?  Probably doesnt matter
 }
 
 async function deletedCat(req, res) {

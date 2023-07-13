@@ -1,5 +1,7 @@
 # api-server
 
+I'd add description of lab and lab names (3, 4)
+
 ## Author: Emily Greason
 
 ## Setup
@@ -9,6 +11,7 @@
 - PORT = 3000
 
 - DATABASE_URI = postgres://localhost:5432/postgres
+(maybe this is what I was actually mssing yesterday?)^^
 
 ### Running the app
 

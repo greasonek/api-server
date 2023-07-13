@@ -44,7 +44,7 @@ async function updateHuman (req, res) {
 
 async function deleteHuman(req, res) {
   let id = parseInt(req.params.id);
-  let deletedHuman = await humanModelCollection.delete(id);
+  let deletedHuman = await humanModelCollection.delete(id); //does delete also work?  I thought docs said use "destroy"
   res.status(204).json(deletedHuman);
 }
 

@@ -1,5 +1,7 @@
 'use strict';
 
+//I get putting model in the model filenames and routes in routes but with the folder seperation it seems uneccesary
+
 const { Sequelize, DataTypes } = require('sequelize');
 const dogs = require('./dogs.model.js');
 const cats = require('./cats.model.js');
